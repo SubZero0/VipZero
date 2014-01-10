@@ -1,0 +1,68 @@
+name: VipZero
+main: me.subzero0.vipzero.Main
+version: 1.2.2
+softdepend: [Vault]
+commands:
+   gerarkey:
+      description: Gera uma key com X dias.
+      usage: /<command> <dias>
+   newkey:
+      description: New key with X days.
+      usage: /<command> <days>
+   keys:
+      description: Ve as keys existentes.
+      usage: /<command>
+   apagarkeys:
+      description: Apaga as keys existentes.
+      usage: /<command>
+   delkeys:
+      description: Delete all keys.
+      usage: /<command>
+   apagarkey:
+      description: Apaga uma key.
+      usage: /<command> <key>
+   delkey:
+      description: Delete one key.
+      usage: /<command> <key>
+   usarkey:
+      description: Utiliza key.
+      usage: /<command> <key>
+   usekey:
+      description: Uses a VIP key.
+      usage: /<command> <key>
+   viptime:
+      description: Mostra data de vencimento do vip.
+      usage: /<command>
+   tempovip:
+      description: Mostra data de vencimento do vip.
+      usage: /<command>
+   vipzero:
+      description: Mostra os comandos do plugin.
+      usage: /<command>
+   tirarvip:
+      description: Tira o VIP de um jogador.
+      usage: /<command> <nome>
+   rvip:
+      description: Remove a VIP from player.
+      usage: /<command> <name>
+   changevip:
+      description: Change your VIP.
+      usage: /<command> <group>
+   trocarvip:
+      description: Muda seu VIP.
+      usage: /<command> <grupo>
+   mudardias:
+      description: Muda os dias do VIP.
+      usage: /<command> <nome> <grupo> [dias]
+   changedays:
+      description: Change the days of VIP.
+      usage: /<command> <name> <group> [days]
+   darvip:
+      description: Da o VIP diretamente.
+      usage: /<command <nome> <grupo> <dias>
+   givevip:
+      description: Give VIP, directly.
+      usage: /<command> <name> <group> <days>
+   addvip:
+      description: More days.
+      usage: /<command> <group> <days>

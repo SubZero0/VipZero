@@ -1,0 +1,47 @@
+MySQL:
+  use: false
+  Host: localhost
+  Port: 3306
+  Username: test
+  Password: '123'
+  Database: minecraft
+language: en
+server_name: VipZero
+check_for_updates: true
+case_sensitive_for_flatfile: false
+key_length: 10
+one_vip_change: false
+usekey_global: false
+rvip_unlisted: true
+use_vault_for_permissions: false
+check_time: 10
+pagseguro:
+  use: false
+  email: suporte@lojamodelo.com.br
+  token: 95112EE828D94278BD394E91C4388F20
+  mode: 1
+  mysql_log: false
+paypal:
+  use: false
+  username: 'username'
+  password: 'password'
+  signature: 'signature'
+  mode: 1
+  mysql_log: false
+logging:
+  usekey: false
+vip_groups:
+- vip1
+- vip2
+default_group: default
+vip_items:
+- vip1,0,264,1,none
+- vip1,0,35:3,1,none
+- vip1,0,35,1,none
+- vip1,0,potion:poison:true:10:1,1,blindness-10:1
+- vip1,0,$,1000,none
+- vip1,0,xp,10,none
+- vip1,0,cmd,say @player Muito bom!
+- vip1,0,310-311-312-313,1,protection-4
+- vip1,0,msg,Oi @player &3tudo bom&4?
+- vip1,0,276,1,sharpness-3-knockback-2-name-&4Legendary @player-desc-&3desc 1-desc-&c@player
