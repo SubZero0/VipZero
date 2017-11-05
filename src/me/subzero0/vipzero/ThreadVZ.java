@@ -241,7 +241,8 @@ public class ThreadVZ extends Thread {
         	case "usekey": {
         		try {
         			Connection con = DriverManager.getConnection(plugin.mysql_url,plugin.mysql_user,plugin.mysql_pass);
-					PreparedStatement keyvalida = con.prepareStatement("SELECT * FROM `keys` WHERE `key`='"+key+"';");
+					PreparedStatement keyvalida = con.prepareStatement("SELECT * FROM `keys` WHERE `key`=?;");
+                    keyvalida.setString(1, key);
 					ResultSet keyvalida2 = keyvalida.executeQuery();
 					if(keyvalida2.next()) {
 						String grupo = keyvalida2.getString("grupo");
@@ -266,13 +267,15 @@ public class ThreadVZ extends Thread {
 							upp.close();
 							plugin.DarVip(((Player)sender), dias, grupo.trim());
 						}
-						PreparedStatement delkey = con.prepareStatement("DELETE FROM `keys` WHERE `key`='"+key+"';");
+						PreparedStatement delkey = con.prepareStatement("DELETE FROM `keys` WHERE `key`=?;");
+                        delkey.setString(1, key);
 						delkey.executeUpdate();
 						delkey.close();
 						if(plugin.getConfig().getBoolean("logging.usekey")) {
 							Calendar now = Calendar.getInstance();
 							SimpleDateFormat fmt = new SimpleDateFormat("dd/MM/yyyy");
-							PreparedStatement addlog = con.prepareStatement("INSERT INTO `vipzero_log` (`comando`, `nome`,`key`,`data`,`grupo`,`dias`) VALUES ('usekey','"+sender.getName()+"','"+key+"','"+fmt.format(now.getTime())+"','"+grupo+"',"+dias+");");
+							PreparedStatement addlog = con.prepareStatement("INSERT INTO `vipzero_log` (`comando`, `nome`,`key`,`data`,`grupo`,`dias`) VALUES ('usekey','"+sender.getName()+"',?,'"+fmt.format(now.getTime())+"','"+grupo+"',"+dias+");");
+                            addlog.setString(1, key);
 							addlog.execute();
 							addlog.close();
 						}
